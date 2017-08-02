@@ -10,7 +10,7 @@
 ABooHUD::ABooHUD()
 {
 	// Set the crosshair texture
-	 static ConstructorHelpers::FObjectFinder<UTexture2D> CrosshairTexObj(TEXT("/Game/FirstPerson/Textures/FirstPersonCrosshair"));
+	 static ConstructorHelpers::FObjectFinder<UTexture2D> CrosshairTexObj(TEXT("/Game/Boo/UI/T_FirstPersonCrosshair"));
 	 CrosshairTex = CrosshairTexObj.Object;
 }
 
@@ -31,5 +31,5 @@ void ABooHUD::DrawHUD()
 	// draw the crosshair
 	FCanvasTileItem TileItem( CrosshairDrawPosition, CrosshairTex->Resource, FLinearColor::White);
 	TileItem.BlendMode = SE_BLEND_Translucent;
-	//Canvas->DrawItem( TileItem );
+	Canvas->DrawItem( TileItem );
 }
